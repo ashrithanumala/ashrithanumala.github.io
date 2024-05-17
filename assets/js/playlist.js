@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         songItem.innerHTML = `
             <img src="${song.cover}" alt="Song Cover" class="song-cover">
             <div class="song-info">
-                <strong>${song.title}</strong> by ${song.artist}
+                <strong>${song.title}</strong><br>${song.artist}
             </div>
         `;
         songList.appendChild(songItem);

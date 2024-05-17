@@ -6,11 +6,9 @@ function sleep(ms) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const phrases = [
-        "a prompt engineering wizard", 
-        "a pro at 1.5x binge watching", 
-        "an avid self-help podcast listener", 
-        "a massive Dallas Cowboys fan", 
-        "always looking to explore"
+        "Exploring Chicago",
+        "Binging Game of Thrones",
+        "Building a Wordle-Bot"
     ];
     const el = document.getElementById("typewriter");
 
