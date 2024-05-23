@@ -1,27 +1,23 @@
 ---
 layout: default
 ---
-<div class="post">
-  {% comment %} <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header> {% endcomment %}
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<div class="post">
   <article>
-    <div style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="intro-section">
+      
       <!-- Typing Effect Section -->
-      <div>
+      <div class="typing-effect">
         <h1>
           Hey I'm Ashrith. <br> <br> I'm currently <span id="typewriter"></span><span id="cursor">|</span>
         </h1>
       </div>
-      
+
       <!-- Profile Section -->
       {% if page.profile %}
         <div class="profile">
@@ -42,82 +38,107 @@ layout: default
           {% endif %}
         </div>
       {% endif %}
+      
     </div>
 
     <div class="clearfix">{{ content }}</div>
 
     <!-- Add margin to the bottom of this div to create space -->
-    <div style="margin-bottom: 40px;"></div>
+    <div class="spacer"></div>
 
     <!-- Flex container for playlist and text -->
-    <div style="display: flex; align-items: flex-start;">
+    <div class="flex-container">
       <!-- Playlist Section -->
-      <div style="flex: 1; padding-top: 0px;">
+      <div class="playlist-section">
         <div id="playlist-container"></div>
-        {% comment %} <div style="text-align: center; padding-top: 4px;">
-          <h2 style="font-size: 14px;">Click Me</h2>
-        </div> {% endcomment %}
       </div>
 
-      <!-- Intro paragraph -->
-      <div style="flex: 2; margin-left: 40px; padding-top: 16px;">
-        <p>
-          I'm a Statistics & Computer Science Undergrad at the University of Illinois 
-          <img src="assets/img/uiucemoji.png" alt="UIUC Emoji" width="24" style="vertical-align: middle; margin-bottom: 4px;"/> , born and raised in Dallas, TX 
-          <img src="assets/img/dallas.png" alt="DTX Emoji" width="24" style="vertical-align: middle; margin-bottom: 6px;"/>. 
-          On campus, I'm involved with R&D for startups🚀 and strategy consulting. In the future, my interests lie in Data Science, Quant Finance, and ML roles. 
-        </p>
-        <p>
-          For fun, I spend a lot of time listening to podcasts, running & lifting, and playing pickleball. In the Fall, some of my favorite pasttimes are watching the Dallas Cowboys and Skip Bayless.
+      <div class="intro-content" style="padding-top: 14px;">
+        <div class="intro-paragraph" style="position: relative;">
+          <p class="intro-text">
+            I'm a Computer Science & Statistics Undergrad at the University of Illinois 
+            <img src="assets/img/uiucemoji.png" alt="UIUC Emoji" class="emoji"/> , born and raised in Dallas, TX 
+            <img src="assets/img/dallas.png" alt="DTX Emoji" class="emoji"/>. 
+            On campus, I'm involved with R&D for startups🚀 and strategy consulting. In the future, my interests lie in Data Science, Quant Finance, and ML roles. 
+          </p>
+          <p class="intro-text">I spend my free time:</p>
+          <ul class="hobby-list">
+            <li>Listening to podcasts</li>
+            <li>Playing Music</li>
+            <li>Running & Lifting</li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+    <!-- Playlist Section -->
+    <div class="playlist-section">
+      <div id="playlist-container"></div>
     </div>
     
     <!-- 2nd paragraph -->
-    <div style="flex: 1; padding-top: 20px; text-align: center;">
-      <p>This website serves as a technical porfolio as well as a blog that I will probably not update often! Please feel free to contact me below.</p>
+    <div class="contact-section" style="text-align: center; margin: 20px 0;">
+      <p> You can click on the playlist above to see what I'm listening to right now. Please feel free to contact me below.</p>
     </div>
 
     <!-- Slideshow Section -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="assets/img/slideshow/slide1.jpg" alt="Slide 1">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2500">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="assets/img/slideshow/slide1.jpg" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="assets/img/slideshow/slide2.jpg" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="assets/img/slideshow/slide3.jpg" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="assets/img/slideshow/slide4.jpg" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="assets/img/slideshow/slide5.jpg" alt="Slide 5">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="assets/img/slideshow/slide6.jpg" alt="Slide 6">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/slideshow/slide2.jpg" alt="Slide 2">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/slideshow/slide3.jpg" alt="Slide 3">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/slideshow/slide4.jpg" alt="Slide 4">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/slideshow/slide5.jpg" alt="Slide 5">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/slideshow/slide6.jpg" alt="Slide 6">
-      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
-
+    <!-- Contact Form Section -->
+    <div class="contact-form-section showcase">
+      <div class="contact-content text">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/mayrzwww" method="POST" class="contact-form">
+          <div class="contact-inputs">
+            <input type="text" name="first-name" placeholder="First Name" required>
+            <input type="text" name="last-name" placeholder="Last Name" required>
+          </div>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <iframe src="https://giphy.com/embed/OK5LK5zLFfdm" width="480" height="480" frameBorder="0" class="giphy-embed video" allowFullScreen></iframe>
+      <div class="overlay"></div>
+    </div>
 
     <!-- Social Icons -->
     {% if page.social %}
@@ -128,3 +149,254 @@ layout: default
     {% endif %}
   </article>
 </div>
+
+<style>
+  .intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 250px;
+    position: relative;
+    padding-bottom: 10px; /* Add padding to the bottom of intro section */
+  }
+
+  .typing-effect {
+    flex: 1 1 auto;
+    min-width: 200px;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .typing-effect h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 576px) {
+    .typing-effect h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .typing-effect h1 {
+      font-size: 2.5rem;
+    }
+    .intro-section {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .typing-effect h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .typing-effect {
+      height: 100px; 
+      order: 2;
+      text-align: center;
+    }
+    .profile {
+      max-width: 150px; 
+      margin: 0 auto;
+      order: 1; 
+    }
+    .intro-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .intro-section {
+      flex-direction: row;
+    }
+    .profile {
+      order: 2; /* Move profile to the right of the typing effect */
+      margin-left: 20px; /* Add space between typing effect and profile picture */
+    }
+    .typing-effect {
+      order: 1; /* Ensure typing effect is to the left of the profile picture */
+    }
+  }
+
+  .spacer {
+    margin-bottom: 40px;
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding-top: 20px; /* Add padding to the top of flex container */
+  }
+
+  .intro-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    align-items: start;
+    flex: 2 1 60%;
+    position: relative;
+  }
+
+  .intro-paragraph {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .intro-text {
+    font-size: 1.2rem;
+  }
+
+  .emoji {
+    vertical-align: middle;
+    margin-bottom: 4px;
+    width: 24px;
+  }
+
+  .hobby-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+  .hobby-list li {
+    margin-bottom: 20px;
+  }
+
+  .playlist-section {
+    flex: 1 1 40%;
+    padding-top: 0px;
+    display: flex;
+    align-items: flex-start; 
+  }
+
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+    }
+
+    .intro-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .intro-paragraph {
+      margin-left: 0;
+    }
+
+    .playlist-section {
+      order: 2;
+    }
+  }
+
+  .showcase .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .showcase .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+
+  .showcase .contact-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    padding: 40px; /* Add padding to contact content */
+  }
+
+  .showcase .contact-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 576px) {
+    .showcase .contact-content h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .showcase .contact-content h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .contact-form-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-form-section .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-section .contact-inputs {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .contact-form-section .contact-inputs input {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact-form-section {
+      pointer-events: none;
+    }
+  }
+
+  .social {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .contact-form-section .contact-form button {
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .contact-form-section .contact-content h2 {
+    color: white;
+  }
+
+  .contact-note {
+    margin-top: 10px;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>

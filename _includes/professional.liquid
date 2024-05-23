@@ -1,0 +1,305 @@
+<div class="section" id="experience">
+  <h2>Experience</h2>
+  <br>
+  <div class="job-cards">
+    <div class="job-card">
+      <img src="/assets/img/companies/codehs.png" alt="codehs" class="company-logo">
+      <h3>SWE Intern</h3>
+      <h4>CodeHS</h4>
+      <p>June. 2024 -> Present</p>
+    </div>
+    <div class="job-card">
+      <img src="/assets/img/companies/founders.jpeg" alt="founders" class="company-logo">
+      <h3>Software Team Lead</h3>
+      <h4>Founders</h4>
+      <p>Aug. 2023 -> Present</p>
+    </div>
+    <div class="job-card">
+      <img src="/assets/img/companies/sandia.jpeg" alt="sandia" class="company-logo">
+      <h3>Stats Research Intern</h3>
+      <h4>Sandia National Labs.</h4>
+      <p>Aug. 2023 -> May 2024</p>
+    </div>
+    <div class="job-card">
+      <img src="/assets/img/companies/invidi.jpeg" alt="invidi" class="company-logo">
+      <h3>Software Dev. Intern</h3>
+      <h4>INVIDI Technologies</h4>
+      <p>May 2023 -> Aug. 2023</p>
+    </div>
+    <div class="job-card">
+      <img src="/assets/img/companies/coppell.png" alt="chs" class="company-logo">
+      <h3>Drumline Instructor</h3>
+      <h4>Coppell High School</h4>
+      <p>May 2022 -> Aug. 2022</p>
+    </div>
+    <div class="job-card">
+      <img src="/assets/img/companies/techforgood.jpeg" alt="tfg" class="company-logo">
+      <h3>ML Intern</h3>
+      <h4>Tech For Good Inc.</h4>
+      <p>May 2021 -> Aug. 2021</p>
+    </div>
+    <div class="job-card">
+      <img src="/assets/img/companies/nasa.png" alt="nasa" class="company-logo">
+      <h3>SEES Intern</h3>
+      <h4>NASA</h4>
+      <p>May 2020 -> Aug. 2020</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="projects">
+  <h2>Projects</h2>
+  <br>
+  <div class="row row-cols-1 row-cols-md-3">
+    {% for project in site.projects %}
+      <div class="col">
+        <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+          <div class="card h-100 hoverable">
+            {% if project.img %}
+              {%
+                include figure.liquid
+                loading="eager"
+                path=project.img
+                sizes = "250px"
+                alt="project thumbnail"
+                class="card-img-top"
+              %}
+            {% endif %}
+            <div class="card-body">
+              <h2 class="card-title">{{ project.title }}</h2>
+              <p class="card-text">{{ project.description }}</p>
+              <div class="row ml-1 mr-1 p-0">
+                {% if project.github %}
+                  <div class="github-icon">
+                    <div class="icon" data-toggle="tooltip" title="Code Repository">
+                      <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
+                    </div>
+                    {% if project.github_stars %}
+                      <span class="stars" data-toggle="tooltip" title="GitHub Stars">
+                        <i class="fa-solid fa-star"></i>
+                        <span id="{{ project.github_stars }}-stars"></span>
+                      </span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="section" id="coursework">
+  <h2>Coursework</h2>
+  <br>
+  <div class="course-cards">
+    <div class="course-card">
+      <h3>CS</h3>
+      <ul>
+        <li>Data Structures & Algorithms</li>
+        <li>Computer Systems</li>
+        <li>Intro to CS 1 & 2 (Kotlin & C++)</li>
+      </ul>
+    </div>
+    <div class="course-card">
+      <h3>Stats/Math</h3>
+      <ul>
+        <li>Stochastic Processes</li>
+        <li>Bayesian Statistics</li>
+        <li>Statistical Modeling</li>
+        <li>Statistics & Probability</li>
+        <li>Linear Algebra + Applications</li>
+      </ul>
+    </div>
+    <div class="course-card">
+      <h3>Other</h3>
+      <ul>
+        <li>High Frequency Trading Technology</li>
+        <li>Financial Engineering</li>
+        <li>Business Technical Writing</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="resume-card">
+  <a href="https://drive.google.com/uc?export=download&id=1d6ip2eIOm8twZhdTvjRIulxMulg_8g2y" download class="resume-download-btn">Download Resume</a>
+</div>
+
+<style>
+:root {
+  --text-color: #000000;
+  --card-border-color-light: #000000; /* Black border for light mode */
+  --card-border-color-dark: #ffffff; /* White border for dark mode */
+  --card-shadow-color: rgba(0, 0, 0, 0.1);
+  --header-text-color: #343a40;
+  --subheader-text-color: #6c757d;
+}
+
+[data-theme='dark'] {
+  --text-color: #ffffff;
+  --card-shadow-color: rgba(255, 255, 255, 0.1);
+  --header-text-color: #f8f9fa;
+  --subheader-text-color: #ced4da;
+}
+
+.professional {
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.section {
+  padding-bottom: 2rem;
+}
+
+.job-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.job-card {
+  background: var(--card-background-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px var(--card-shadow-color);
+  color: var(--text-color);
+  flex: 1 1 calc(50% - 1.5rem); /* For 2 cards per row */
+  max-width: calc(50% - 1.5rem); /* For 2 cards per row */
+  position: relative; /* Ensure absolute positioning works */
+  border: 1px solid var(--card-border-color-light);
+  outline: 2px solid var(--card-border-color-light);
+}
+
+[data-theme='dark'] .job-card {
+  border: 1px solid var(--card-border-color-dark);
+  outline: 2px solid var(--card-border-color-dark);
+}
+
+.company-logo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 60px; /* Increased size */
+  height: auto;
+}
+
+.job-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--header-text-color);
+  max-width: calc(100% - 70px); /* Reduce width to avoid running into the logo */
+  display: inline-block;
+}
+
+.job-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--subheader-text-color);
+}
+
+.job-card p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.job-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--text-color);
+}
+
+.job-card li {
+  margin-bottom: 0.5rem;
+}
+
+.course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.course-card {
+  background: var(--background-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px var(--card-shadow-color);
+  color: var(--text-color);
+  flex: 1 1 calc(33.333% - 1.5rem); /* For 3 cards per row */
+  max-width: calc(33.333% - 1.5rem); /* For 3 cards per row */
+  border: 1px solid var(--card-border-color-light);
+  outline: 2px solid var(--card-border-color-light);
+}
+
+[data-theme='dark'] .course-card {
+  border: 1px solid var(--card-border-color-dark);
+  outline: 2px solid var(--card-border-color-dark);
+}
+
+.course-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--header-text-color);
+}
+
+.course-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--text-color);
+}
+
+.course-card li {
+  margin-bottom: 0.5rem;
+}
+
+.resume-card {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.resume-download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ffffff; /* White text color for contrast */
+  background-color: #007bff; /* Button background color */
+  text-decoration: none;
+  border: 1px solid #007bff; /* Button border color */
+  padding: 0.75rem 1.5rem; /* Larger padding for button-like appearance */
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-download-btn:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+  color: #ffffff;
+}
+
+@media screen and (max-width: 992px) {
+  .job-card {
+    flex: 1 1 calc(100% - 1.5rem); /* For single column layout */
+    max-width: calc(100% - 1.5rem); /* For single column layout */
+  }
+
+  .job-card h3 {
+    font-size: 1.2rem; /* Reduced size for mobile */
+    max-width: calc(100% - 60px); /* Reduce width to avoid running into the logo on mobile */
+  }
+
+  .company-logo {
+    width: 50px; /* Slightly smaller for mobile */
+  }
+
+  .course-card {
+    flex: 1 1 calc(100% - 1.5rem); /* For single column layout */
+    max-width: calc(100% - 1.5rem); /* For single column layout */
+  }
+
+  .course-card h3 {
+    font-size: 1.2rem; /* Reduced size for mobile */
+  }
+}
+</style>
