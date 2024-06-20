@@ -3,7 +3,7 @@ layout: page
 title: project 2
 description: a project with a background image and giscus comments
 img: assets/img/3.jpg
-importance: 2
+importance: 3
 category: work
 giscus_comments: true
 ---
@@ -49,15 +49,15 @@ Say you wanted to write a little bit about your project before you posted the re
 You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-4 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="_projects/data_bowl_imgs/mlb_chasedown.png" title="MLB_SPEED" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="_projects/data_bowl_imgs/dt_chasedown.png" title="DT_SPEED" class="img-fluid rounded z-depth-1" %}
     </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    <div class="col-sm-4 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="_projects/data_bowl_imgs/fs_chasedown.png" title="FS_SPEED" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
 
 The code is simple.

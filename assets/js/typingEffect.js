@@ -6,9 +6,7 @@ function sleep(ms) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const phrases = [
-        "Exploring Chicago",
-        "Binging Game of Thrones",
-        "Building a Wordle-Bot"
+        "Back on campus",
     ];
     const el = document.getElementById("typewriter");
 

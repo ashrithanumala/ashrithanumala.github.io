@@ -59,7 +59,7 @@ layout: default
             I'm a Computer Science & Statistics Undergrad at the University of Illinois 
             <img src="assets/img/uiucemoji.png" alt="UIUC Emoji" class="emoji"/> , born and raised in Dallas, TX 
             <img src="assets/img/dallas.png" alt="DTX Emoji" class="emoji"/>. 
-            On campus, I'm involved with R&D for startups🚀 and strategy consulting. In the future, my interests lie in Data Science, Quant Finance, and ML roles. 
+            On campus, I'm involved with R&D for startups🚀 and strategy consulting. In the future, my professional interests lie in Data Science, Quant Finance, and ML roles. 
           </p>
           <p class="intro-text">I spend my free time:</p>
           <ul class="hobby-list">
@@ -136,7 +136,6 @@ layout: default
           <button type="submit">Send</button>
         </form>
       </div>
-      <iframe src="https://giphy.com/embed/OK5LK5zLFfdm" width="480" height="480" frameBorder="0" class="giphy-embed video" allowFullScreen></iframe>
       <div class="overlay"></div>
     </div>
 
@@ -183,9 +182,6 @@ layout: default
     .typing-effect h1 {
       font-size: 2.5rem;
     }
-    .intro-section {
-      flex-wrap: nowrap;
-    }
   }
 
   @media (min-width: 992px) {
@@ -196,14 +192,14 @@ layout: default
 
   @media (max-width: 768px) {
     .typing-effect {
-      height: 100px; 
+      height: 100px;
       order: 2;
       text-align: center;
     }
     .profile {
-      max-width: 150px; 
+      max-width: 150px;
       margin: 0 auto;
-      order: 1; 
+      order: 1;
     }
     .intro-section {
       flex-direction: column;
@@ -275,7 +271,7 @@ layout: default
     flex: 1 1 40%;
     padding-top: 0px;
     display: flex;
-    align-items: flex-start; 
+    align-items: flex-start;
   }
 
   @media (max-width: 768px) {
@@ -398,5 +394,41 @@ layout: default
     content: "";
     display: table;
     clear: both;
+  }
+
+  /* Contact Section Background Images */
+  .contact-form-section {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media (min-width: 769px) {
+    .contact-form-section {
+      background-image: url('assets/img/webbackground.jpg');
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-form-section {
+      background-image: url('assets/img/mobilebackground.jpg');
+    }
+  }
+
+  .contact-form-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .contact-form-section .contact-content {
+    position: relative;
+    z-index: 2;
+    color: white;
   }
 </style>
