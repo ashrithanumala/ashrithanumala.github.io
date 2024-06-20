@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https:/ashrithanumala.github.io/sitemap.xml
