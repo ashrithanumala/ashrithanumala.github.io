@@ -7,8 +7,10 @@ function sleep(ms) {
 document.addEventListener("DOMContentLoaded", function() {
     const phrases = [
         "Back on campus",
+        "Back on campus Back on campus ",
     ];
     const el = document.getElementById("typewriter");
+    const cursor = document.getElementById("cursor");
 
     let baseTypingSpeed = 100; // Base typing speed in ms
     let backspaceSpeed = 50; // Backspacing speed in ms
@@ -32,13 +34,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const writeLoop = async () => {
         while (true) {
             let curWord = phrases[curPhraseIndex];
-            el.style.color = getRandomColor(); // Set random color
+            let randomColor = getRandomColor(); // Get random color
+            el.style.color = randomColor; // Set text color
+            cursor.style.color = randomColor; // Set cursor color
+            cursor.classList.add('typing'); // Add typing class to start animation
 
             // Typing the current word
             for (let i = 0; i < curWord.length; i++) {
                 el.innerText = curWord.substring(0, i + 1);
                 await sleep(getRandomTypingSpeed());
             }
+
+            cursor.classList.remove('typing'); // Remove typing class to stop animation
+            cursor.classList.add('backspacing'); // Add backspacing class to make cursor solid
 
             await sleep(pauseAfterTyping);
 
@@ -47,6 +55,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 el.innerText = curWord.substring(0, i - 1);
                 await sleep(backspaceSpeed);
             }
+
+            cursor.classList.remove('backspacing'); // Remove backspacing class
+            cursor.classList.add('typing'); // Re-add typing class to start animation
 
             await sleep(pauseAfterBackspacing);
 

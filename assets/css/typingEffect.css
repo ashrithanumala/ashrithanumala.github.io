@@ -1,12 +1,32 @@
 /* assets/css/typingEffect.css */
+.typing-effect {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0; /* Adjust or remove padding as needed */
+    margin-right: 20px; /* Add margin to avoid overlap */
+    flex: 1; /* Ensure it takes available space */
+}  
+
+.typing-effect h1 {
+    position: absolute;
+    top: 0;
+    max-width: calc(75% - 160px);
+}
+
 #typewriter {
     color: #0072ef;
     font-weight: bold;
 }
 
-#cursor {
+#cursor.typing {
     color: #0072ef;
     animation: blink 1s linear infinite;
+}
+
+#cursor.backspacing {
+    color: #0072ef;
+    animation: none; /* No animation */
 }
 
 @keyframes blink {
