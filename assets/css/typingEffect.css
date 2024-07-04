@@ -1,1 +1,1 @@
-#typewriter{color:#0072ef;font-weight:bold}#cursor{color:#0072ef;animation:blink 1s linear infinite}@keyframes blink{0%{opacity:100%}50%{opacity:0}}
+.typing-effect{display:flex;flex-direction:column;align-items:flex-start;padding:0;margin-right:20px;flex:1}.typing-effect h1{position:absolute;top:0;max-width:calc(75% - 160px)}#typewriter{color:#0072ef;font-weight:bold}#cursor.typing{color:#0072ef;animation:blink 1s linear infinite}#cursor.backspacing{color:#0072ef;animation:none}@keyframes blink{0%{opacity:100%}50%{opacity:0}}
