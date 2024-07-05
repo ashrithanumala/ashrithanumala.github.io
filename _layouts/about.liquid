@@ -11,32 +11,32 @@ layout: default
   <article>
     <div class="intro-section">
       <!-- Typing Effect Section -->
-      <div class="typing-effect">
-        <h1>
-          Hey I'm Ashrith. <br> <br> I'm currently <span id="typewriter"></span><span id="cursor">|</span>
-        </h1>
-      </div>
+       <div class="typing-effect-container">
+          <div class="typing-effect">
+            <h1>
+              Hey I'm Ashrith. <br> <br> I'm currently <span id="typewriter"></span><span id="cursor">|</span>
+            </h1>
+          </div>
+       </div>
 
       <!-- Profile Section -->
-      {% if page.profile %}
-        <div class="profile">
-          {% if page.profile.image %}
-            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-            {% if page.profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
-            {%
-              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true
-            %}
+      <div class="profile">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% if page.profile.more_info %}
-            <div class="more-info">{{ page.profile.more_info }}</div>
-          {% endif %}
-        </div>
-      {% endif %}
+          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
     </div>
 
     <div class="clearfix">{{ content }}</div>
@@ -59,7 +59,7 @@ layout: default
             <img src="assets/img/dallas.png" alt="DTX Emoji" class="emoji"/>. 
             On campus, I'm involved with R&D for startups🚀 and strategy consulting. In the future, my professional interests lie in Data Science, Quant Finance, and ML roles. 
           </p>
-          <p class="intro-text">I spend my free time:</p>
+          <p class="hobby-text">I spend my free time:</p>
           <ul class="hobby-list">
             <li>Listening to podcasts</li>
             <li>Playing Music</li>
@@ -159,47 +159,65 @@ layout: default
     gap: 20px;
   }
 
-  @media (min-width: 576px) {
-    .typing-effect h1 {
-      font-size: 2rem;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .typing-effect h1 {
-      font-size: 2.5rem;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .typing-effect h1 {
-      font-size: 3rem;
-    }
-  }
   /* small screens */
   @media (max-width: 768px) {
-    .typing-effect {
-      order: 2;
-    }
-    .profile {
-      max-width: 150px;
-      margin: 0 auto;
-      order: 1;
-    }
     .intro-section {
       flex-direction: column;
       align-items: center;
+      padding: 10px 0;
+      margin-bottom: -20px;
     }
+
+    .typing-effect-container {
+      order: 2; /* Ensure the typing effect container is placed after the profile picture */
+      max-width: 90%;
+      overflow: hidden;
+      height: 120px;
+    }
+
+    .typing-effect {
+      margin-top: 10px; /* Add space between profile photo and typing effect */
+      max-height: 100%; /* Ensure typing effect text does not exceed screen width */
+      text-align: center; /* Center the text */
+      padding: 0; /* Remove any extra padding */
+      position: sticky;
+    }
+
+    .typing-effect h1 {
+      font-size: 1.5rem;
+      line-height: 1.2; 
+      position: relative; 
+      max-width: 100%;
+      display: inline;
+    }
+
+    #typewriter {
+      font-size: 1.5rem; /* Adjust font size for mobile devices */
+    }
+
+    #cursor.typing {
+      font-size: 1.5rem; /* Adjust font size for mobile devices */
+    }
+
+    .profile {
+      max-width: 150px;
+      margin: 0 auto;
+      order: 1; /* Ensure the profile picture is above the typing effect container */
+    }
+
   }
+
   /* bigger screens */
   @media (min-width: 768px) {
     .intro-section {
       flex-direction: row;
     }
+
     .profile {
       order: 2; /* Move profile to the right of the typing effect */
       margin-left: 20px; /* Add space between typing effect and profile picture */
     }
+
     .typing-effect {
       order: 1; /* Ensure typing effect is to the left of the profile picture */
     }
@@ -235,6 +253,11 @@ layout: default
     font-size: 1.2rem;
   }
 
+  .hobby-text {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
   .emoji {
     vertical-align: middle;
     margin-bottom: 4px;
@@ -244,8 +267,9 @@ layout: default
   .hobby-list {
     list-style-type: disc;
     padding-left: 20px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-size: 1.2rem;
+    text-align: left;
   }
 
   .hobby-list li {
@@ -271,6 +295,7 @@ layout: default
 
     .intro-paragraph {
       margin-left: 0;
+      text-align: center;
     }
 
     .playlist-section {
