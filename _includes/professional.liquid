@@ -102,6 +102,9 @@
         <li>Computer Systems</li>
         <li>Intro CS 1&2 (Kotlin/C++)</li>
         <li>Software Design Lab</li>
+        <li class="current-course">Algorithms</li>
+        <li class="current-course">Database Systems</li>
+        <li class="current-course">Deep Learning for Computer Vision</li>
       </ul>
     </div>
     <div class="course-card">
@@ -112,6 +115,8 @@
         <li>Statistical Modeling</li>
         <li>Statistics & Probability</li>
         <li>Linear Algebra + Applications</li>
+        <li>Multivariable Calculus</li>
+        <li class="current-course">Statistical Modeling 2</li>
       </ul>
     </div>
     <div class="course-card">
@@ -121,6 +126,7 @@
         <li>Financial Engineering</li>
         <li>Business Technical Writing</li>
         <li>Mythology of Greece and Rome</li>
+        <li class="current-course">World Music</li>
       </ul>
     </div>
   </div>
@@ -138,6 +144,8 @@
   --card-shadow-color: rgba(0, 0, 0, 0.1);
   --header-text-color: #343a40;
   --subheader-text-color: #6c757d;
+  --current-course-color-light: #660000; /* Light mode color */
+  --current-course-color-dark: #FF00FF; /* Dark mode color */
 }
 
 [data-theme='dark'] {
@@ -145,6 +153,8 @@
   --card-shadow-color: rgba(255, 255, 255, 0.1);
   --header-text-color: #f8f9fa;
   --subheader-text-color: #ced4da;
+  --current-course-color-light: #660000; /* Dark mode color for light courses */
+  --current-course-color-dark: #FF00FF;  /* Light mode color for dark courses */
 }
 
 .professional {
@@ -257,6 +267,15 @@
   margin-bottom: 0.5rem;
 }
 
+.current-course {
+  color: var(--current-course-color-light);
+  font-weight: bold;
+}
+
+[data-theme='dark'] .current-course {
+  color: var(--current-course-color-dark);
+}
+
 .resume-card {
   text-align: center;
   margin-top: 2rem;
@@ -318,7 +337,7 @@
   .job-card {
     margin-bottom: 1.5rem; /* Adjust as needed for spacing */
   }
-
-
 }
 </style>
+
+
