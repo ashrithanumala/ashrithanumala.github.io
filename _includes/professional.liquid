@@ -1,4 +1,4 @@
-<div class="section" id="experience">
+<div class="section" id="experience" style="margin-top:-30px">
   <h2>Experience</h2>
   <br>
   <div class="job-cards">
@@ -9,8 +9,14 @@
       <p>June. 2024 -> Present</p>
     </div>
     <div class="job-card">
+      <img src="/assets/img/companies/otcr.jpeg" alt="codehs" class="company-logo">
+      <h3>Consultant</h3>
+      <h4>OTCR</h4>
+      <p>Feb. 2024 -> Present</p>
+    </div>
+    <div class="job-card">
       <img src="/assets/img/companies/founders.jpeg" alt="founders" class="company-logo">
-      <h3>Software Team Lead</h3>
+      <h3>R&D</h3>
       <h4>Founders</h4>
       <p>Aug. 2023 -> Present</p>
     </div>
@@ -50,9 +56,9 @@
 <div class="section" id="projects">
   <h2>Projects</h2>
   <br>
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="project-cards">
     {% for project in site.projects %}
-      <div class="col" style="margin-bottom:1.5rem">
+      <div class="project-card">
         <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
           <div class="card h-100 hoverable">
             {% if project.img %}
@@ -60,7 +66,7 @@
                 include figure.liquid
                 loading="eager"
                 path=project.img
-                sizes = "250px"
+                sizes="250px"
                 alt="project thumbnail"
                 class="card-img-top"
               %}
@@ -90,6 +96,7 @@
     {% endfor %}
   </div>
 </div>
+
 
 <div class="section" id="coursework">
   <h2>Coursework</h2>
@@ -144,7 +151,7 @@
   --card-shadow-color: rgba(0, 0, 0, 0.1);
   --header-text-color: #343a40;
   --subheader-text-color: #6c757d;
-  --current-course-color-light: #660000; /* Light mode color */
+  --current-course-color-light: #ADD8E6; /* Light mode color */
   --current-course-color-dark: #FF00FF; /* Dark mode color */
 }
 
@@ -153,7 +160,7 @@
   --card-shadow-color: rgba(255, 255, 255, 0.1);
   --header-text-color: #f8f9fa;
   --subheader-text-color: #ced4da;
-  --current-course-color-light: #660000; /* Dark mode color for light courses */
+  --current-course-color-light: #ADD8E6; /* Dark mode color for light courses */
   --current-course-color-dark: #FF00FF;  /* Light mode color for dark courses */
 }
 
@@ -227,6 +234,74 @@
 .job-card li {
   margin-bottom: 0.5rem;
 }
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--card-shadow-color);
+  color: var(--text-color);
+  flex: 1 1 calc(33.333% - 1.5rem); /* For 3 cards per row */
+  max-width: calc(33.333% - 1.5rem); /* For 3 cards per row */
+  border: 1px solid var(--card-border-color-light);
+  outline: 2px solid var(--card-border-color-light);
+}
+
+[data-theme='dark'] .project-card {
+  border: 2px solid var(--card-border-color-dark);
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--header-text-color);
+}
+
+.project-card p {
+  color: var(--text-color);
+}
+
+.github-icon {
+  display: flex;
+  align-items: center;
+}
+
+.gh-icon {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .github-icon .gh-icon {
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .stars {
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 992px) {
+  .project-card {
+    flex: 1 1 calc(100% - 1.5rem); /* For single column layout */
+    max-width: calc(100% - 1.5rem); /* For single column layout */
+  }
+
+  .project-card h2 {
+    font-size: 1.2rem; /* Reduced size for mobile */
+  }
+}
+
 
 .course-cards {
   display: flex;
@@ -337,6 +412,10 @@
   .job-card {
     margin-bottom: 1.5rem; /* Adjust as needed for spacing */
   }
+}
+
+.project-card .course-card .job-card .resume-card{
+  justify-content: center;
 }
 </style>
 
