@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Ensure slides are present
         if (slides.length === 0) return;
-
+        console.log(slides.length);
         // Hide all slides
         for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
