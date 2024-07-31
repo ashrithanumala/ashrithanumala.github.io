@@ -60,7 +60,7 @@
     {% for project in site.projects %}
       <div class="project-card">
         <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
-          <div class="card h-100 hoverable">
+          <div class="h-100 hoverable">
             {% if project.img %}
               {%
                 include figure.liquid
