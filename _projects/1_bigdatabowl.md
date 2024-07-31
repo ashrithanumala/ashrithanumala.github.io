@@ -7,7 +7,7 @@ importance: 2
 category: work
 giscus_comments: true
 ---
-This is a project I completed with my friends [Akil Daresalamwala](https://www.linkedin.com/in/akil-daresalamwala-162b10240/) and [Rudra Raval](https://www.linkedin.com/in/rudra-raval/) for the 2024 NFL Big Data Bowl.
+This is a project I completed with my friends [Akil Daresalamwala] and [Rudra Raval] for the 2024 NFL Big Data Bowl.
 
 
 # The Tackle Tango: An Analysis of Poise and Performance in Tackling
