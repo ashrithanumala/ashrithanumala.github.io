@@ -2,14 +2,15 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const playlist = {
-        cover: "assets/img/playlistimgs/playlistcover.jpg", // Path to your playlist cover image
+        cover: "assets/img/playlistimgs/playlistcover.jpeg", // Path to your playlist cover image
         songs: [
-            { title: "Gods & Monsters", artist: "Lana Del Rey", cover: "assets/img/playlistimgs/Paradise.jpg" },
-            { title: "Can't Stop", artist: "Red Hot Chili Peppers", cover: "assets/img/playlistimgs/By the Way.jpg" },
-            { title: "I love you", artist: "Fontaines D.C.", cover: "assets/img/playlistimgs/Skinty Fia go deo.jpg" },
-            { title: "A Horse With No Name", artist: "America", cover: "assets/img/playlistimgs/America.jpg" },
-            { title: "Misses", artist: "Dominic Fike", cover: "assets/img/playlistimgs/14 minutes.jpg" }
+            { title: "Memphis; The Blues", artist: "Zach Bryan", cover: "assets/img/playlistimgs/one.jpg" },
+            { title: "Steps Beach", artist: "Childish Gambino", cover: "assets/img/playlistimgs/two.jpg" },
+            { title: "Kids With Guns", artist: "Gorillaz", cover: "assets/img/playlistimgs/three.jpg" },
+            { title: "One Wish", artist: "Ravyn Lenae", cover: "assets/img/playlistimgs/four.webp" },
+            { title: "Me and Jon Hanging on", artist: "Mac Demarkco", cover: "assets/img/playlistimgs/five.jpg" }
         ]
+
     };
 
     const playlistContainer = document.getElementById('playlist-container');

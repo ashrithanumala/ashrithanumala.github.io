@@ -1,81 +1,69 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
-importance: 3
+title: Wordle Solver
+description: Solving the popular word game, Wordle
+img:
+importance: 1
 category: work
 giscus_comments: true
 ---
+# Overview
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project has been something I'd been thinking about since I started playing Wordle back in 2022. I'd always be guessing subptoimal words and making mistakes that I knew a computer wouldn't be susceptible to. After being reinspired by 3Blue1Brown's video about using information theory to solve Wordle, I decided to take a crack at it myself. My main goal with this project was to create an efficient solution, aiming solely to minimize the number of attempts, while also serving as a good introduction to reinforcement learning.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Technical Structure
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- **Reinforcement Learning Agent:** The core agent in this algorithm is Q-learning reinforcement agent that learns from both positive and negative rewards. The reward structure is tuned to heavily weight correct letters in the right locations, and bias against guessing any incorrect letters. At this point in time, there is more work to be done in terms of tuning parameters for the agent.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+- **Probabilistic Word Selection:** Each possible word is "ranked" probabalistically based off a couple factors. I had done some initial Exploratory Data Analysis(EDA) and found that out of the ~15k possible answers, there was a list of ~3k common words that seemed to be the right answer around 85% of the time. Accounting for this fact, as well as observing which letters appeared in which positions the most often, the words are ordered in terms of how likely they are to be the very next guess. 
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+<div class="container">
+    <style>
+        /* Adjust the size of the images */
+        .img-fluid {
+            width: 200%; /* Increase image size */
+            height: auto;
+            max-width: 1200px; /* Adjust as needed */
+        }
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="_projects/data_bowl_imgs/mlb_chasedown.png" title="MLB_SPEED" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="_projects/data_bowl_imgs/dt_chasedown.png" title="DT_SPEED" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="_projects/data_bowl_imgs/fs_chasedown.png" title="FS_SPEED" class="img-fluid rounded z-depth-1" %}
+        /* Add margin between rows */
+        .row {
+            margin-bottom: 2rem;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-sm-4 mt-3 mt-md-0">
+            {% include figure.liquid loading="eager" path="assets/img/wordle/letter_frequencies.png" title="Letter Frequencies" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
+- **Cuckoo Filter Integration:** Cuckoo filters are space-efficient probabalistic data structures created in 2014 by professors at CMU. They allow for quick membership validity checks which was ideal for this scenario where I repeately check if words are still valid based off their letter positionings. This data strucure is implemented in C++ for extremely fast lookup.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+<div class="container">
+    <style>
+        /* Adjust the size of the images */
+        .img-fluid {
+            width: 200%; /* Increase image size */
+            height: auto;
+            max-width: 1200px; /* Adjust as needed */
+        }
+
+        /* Add margin between rows */
+        .row {
+            margin-bottom: 2rem;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-sm-4 mt-3 mt-md-0">
+            {% include figure.liquid loading="eager" path="assets/img/wordle/cuckoo_filter.png" title="Cuckoo Filter" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
 </div>
-```
 
-{% endraw %}
+## Applications and Takeaways
+
+This solver currently solves any given word in about 4.4753 guesses – not terrible – but not great either. Future work includes picking a more optimal guesing strategy for the first word (currently using words rated 97+ by the NYT). Let me know if you have any questions or improvements to make!

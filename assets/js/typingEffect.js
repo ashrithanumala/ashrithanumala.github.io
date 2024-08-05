@@ -7,8 +7,8 @@ function sleep(ms) {
 document.addEventListener("DOMContentLoaded", function() {
     const phrases = [
         "Exploring Chicago",
-        "Watching House of the Dragon",
-        "Rotting"
+        "Listening to the Modern Wisdom Podcast",
+        "Reading Cowboys News"
     ];
     const el = document.getElementById("typewriter");
     const cursor = document.getElementById("cursor");

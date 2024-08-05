@@ -3,7 +3,7 @@ layout: page
 title: NFL 2024 Big Data Bowl
 description: Analyzing an NFL defender's tackling ability
 img:
-importance: 2
+importance: 3
 category: work
 giscus_comments: true
 ---
