@@ -291,17 +291,6 @@ layout: default
     }
   }
 
-  .showcase .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    pointer-events: none;
-  }
-
   .showcase .overlay {
     position: absolute;
     top: 0;
@@ -317,7 +306,7 @@ layout: default
     z-index: 3;
     text-align: center;
     color: #fff;
-    padding: 40px; /* Add padding to contact content */
+    padding: 40px;
   }
 
   .showcase .contact-content h2 {
@@ -359,7 +348,12 @@ layout: default
 
   @media screen and (max-width: 768px) {
     .contact-form-section {
-      pointer-events: none;
+      pointer-events: none; /* Prevent clicks on the entire section */
+    }
+
+    .contact-form-section .contact-form,
+    .contact-form-section .contact-form * {
+      pointer-events: auto; /* Enable clicks on the form and its elements */
     }
   }
 
@@ -421,7 +415,7 @@ layout: default
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: -1;
   }
 
   .contact-form-section .contact-content {
