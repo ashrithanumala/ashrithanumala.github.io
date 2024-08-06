@@ -202,6 +202,7 @@ GEM
 PLATFORMS
   aarch64-linux
   arm64-darwin-22
+  arm64-darwin-23
   x86_64-linux
   x86_64-linux-gnu
 
@@ -230,6 +231,9 @@ DEPENDENCIES
   observer
   unicode_utils
   webrick
+
+RUBY VERSION
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.5.7
