@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const phrases = [
         "Interning in Chicago",
         "Gymmin",
-        "Looking forward to Next Semester",
+        "Eating",
     ];
     const el = document.getElementById("typewriter");
     const cursor = document.getElementById("cursor");
