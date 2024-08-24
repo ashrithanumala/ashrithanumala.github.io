@@ -89,7 +89,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: One-Off Thoughts # blog_name will be displayed in your blog page
 blog_description: A collection of various ideas that have popped into my brain
-permalink: /thoughts
+permalink:
 
 # Pagination
 pagination:
