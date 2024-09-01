@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const phrases = [
         "back at school",
         "getting my mileage up",
-        "relearning how to meal prep",
+        "working part-time for the Cubs",
     ];
     const el = document.getElementById("typewriter");
     const cursor = document.getElementById("cursor");
