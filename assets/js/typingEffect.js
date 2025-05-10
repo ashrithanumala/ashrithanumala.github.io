@@ -6,9 +6,9 @@ function sleep(ms) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const phrases = [
-        "back at school",
-        "getting my mileage up",
-        "working part-time for the Cubs",
+        "in NYC",
+        "reading a Song of Ice and Fire",
+        "trying to run more",
     ];
     const el = document.getElementById("typewriter");
     const cursor = document.getElementById("cursor");

@@ -1,44 +1,35 @@
-// assets/js/playlist.js
-
 document.addEventListener("DOMContentLoaded", function() {
-    const playlist = {
-        cover: "assets/img/playlistimgs/playlistcover.jpeg", // Path to your playlist cover image
-        songs: [
-            { title: "Memphis; The Blues", artist: "Zach Bryan", cover: "assets/img/playlistimgs/one.jpg" },
-            { title: "Steps Beach", artist: "Childish Gambino", cover: "assets/img/playlistimgs/two.jpg" },
-            { title: "Kids With Guns", artist: "Gorillaz", cover: "assets/img/playlistimgs/three.jpg" },
-            { title: "One Wish", artist: "Ravyn Lenae", cover: "assets/img/playlistimgs/four.webp" },
-            { title: "Me and Jon Hanging on", artist: "Mac Demarkco", cover: "assets/img/playlistimgs/five.jpg" }
-        ]
-
-    };
+    const imagePaths = [
+        "assets/img/slideshow/slide1.JPG",
+        "assets/img/slideshow/slide2.JPG",
+        "assets/img/slideshow/slide3.JPG"
+    ];
 
     const playlistContainer = document.getElementById('playlist-container');
-    
-    const coverImage = document.createElement('img');
-    coverImage.src = playlist.cover;
-    coverImage.alt = "Playlist Cover";
-    coverImage.classList.add('playlist-cover');
-    coverImage.addEventListener('click', () => {
-        const songList = document.getElementById('song-list');
-        songList.classList.toggle('show');
-    });
-    playlistContainer.appendChild(coverImage);
+    playlistContainer.classList.add('carousel-container');
 
-    const songList = document.createElement('div');
-    songList.id = 'song-list';
-    songList.classList.add('song-list');
-    playlist.songs.forEach(song => {
-        const songItem = document.createElement('div');
-        songItem.classList.add('song-item');
-        songItem.innerHTML = `
-            <img src="${song.cover}" alt="Song Cover" class="song-cover">
-            <div class="song-info">
-                <strong>${song.title}</strong><br>${song.artist}
-            </div>
-        `;
-        songList.appendChild(songItem);
+    const carousel = document.createElement('div');
+    carousel.classList.add('carousel');
+
+    imagePaths.forEach((src, index) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Slide ${index + 1}`;
+        img.classList.add('carousel-image');
+        if (index === 0) img.classList.add('active');
+        carousel.appendChild(img);
     });
 
-    playlistContainer.appendChild(songList);
+    playlistContainer.appendChild(carousel);
+
+    const images = carousel.querySelectorAll('.carousel-image');
+    let current = 0;
+
+    function showNextImage() {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+    }
+
+    setInterval(showNextImage, 3000); // Rotate every 3 seconds
 });
