@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ashrith Anumala — Software Engineer at Google, NYC</title>
+<meta name="description" content="Ashrith Anumala — engineer at Google, living in New York. Projects, writeups, and what I'm up to.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://ashrithanumala.github.io/">
+<meta name="author" content="Ashrith Anumala">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ashrith Anumala">
+<meta property="og:url" content="https://ashrithanumala.github.io/">
+<meta property="og:title" content="Ashrith Anumala — Software Engineer at Google, NYC">
+<meta property="og:description" content="Ashrith Anumala — engineer at Google, living in New York. Projects: PocketLens, flightwatch, Weather trading system, Cowboys salary cap tool.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ashrith Anumala — Software Engineer at Google, NYC">
+<meta name="twitter:description" content="Ashrith Anumala — engineer at Google, living in New York. Projects: PocketLens, flightwatch, Weather trading system, Cowboys salary cap tool.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://ashrithanumala.github.io/#me","name":"Ashrith Anumala","url":"https://ashrithanumala.github.io/","jobTitle":"Software Engineer","worksFor":{"@type":"Organization","name":"Google"},"address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","addressCountry":"US"},"sameAs":["https://github.com/ashrithanumala","https://linkedin.com/in/ashrithanumala","https://www.chess.com/member/ashrithanumala"]},{"@type":"WebSite","@id":"https://ashrithanumala.github.io/#site","url":"https://ashrithanumala.github.io/","name":"Ashrith Anumala","publisher":{"@id":"https://ashrithanumala.github.io/#me"}},{"@type":"ItemList","name":"Projects by Ashrith Anumala","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"name":"PocketLens","url":"https://ashrithanumala.github.io/w/pocketlens.html","description":"Self hosted personal finance app."},{"@type":"ListItem","position":2,"name":"flightwatch","url":"https://ashrithanumala.github.io/w/flightwatch.html","description":"Python automation to hunt cheap flights to Europe."},{"@type":"ListItem","position":3,"name":"Weather trading system","url":"https://ashrithanumala.github.io/w/weather-trading-system.html","description":"Builds its own temperature forecast, prices every Kalshi band off it, and trades the gap."},{"@type":"ListItem","position":4,"name":"Cowboys salary cap tool","url":"https://www.bloggingtheboys.com/post/oNcDXa77fZtu"},{"@type":"ListItem","position":5,"name":"Wordle solver","url":"https://ashrithanumala.github.io/w/wordle-solver.html","description":"My attempt at solving the game."},{"@type":"ListItem","position":6,"name":"LLM distillation feature store","url":"https://ashrithanumala.github.io/w/llm-distillation.html","description":"Cache the expensive model's answers once, train a cheap model on them forever."},{"@type":"ListItem","position":7,"name":"NFL Big Data Bowl","url":"https://ashrithanumala.github.io/w/big-data-bowl.html","description":"Two metrics for tackling — one for the chase, one for the finish."}]}]}</script>
+<link rel="prefetch" href="w/pocketlens.html">
+<link rel="prefetch" href="w/flightwatch.html">
+<link rel="prefetch" href="w/weather-trading-system.html">
+<link rel="prefetch" href="w/wordle-solver.html">
+<link rel="prefetch" href="w/llm-distillation.html">
+<link rel="prefetch" href="w/big-data-bowl.html">
+<style>:root{--bg:#FBF9F5; --fg:#1B1A17; --muted:#6E695E; --rule:#E2DCCF;--accent:#8A3B24; --note:#5C574C; --card:#F4F0E8;--serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141310; --fg:#E9E4D9; --muted:#9A9384; --rule:#2E2B24;--accent:#D08A63; --note:#A9A294; --card:#1C1A16;}}:root[data-theme="dark"]{--bg:#141310; --fg:#E9E4D9; --muted:#9A9384; --rule:#2E2B24;--accent:#D08A63; --note:#A9A294; --card:#1C1A16;}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:19px;line-height:1.6;font-kerning:normal;text-rendering:optimizeLegibility;}.wrap{max-width:1180px;margin:0 auto;padding:0 6vw}h1,h2,h3{font-weight:400;line-height:1.14;margin:0}h1{font-size:clamp(2.6rem,7.5vw,4.6rem);letter-spacing:-.025em;margin:0 0 .12em}h2{font-size:clamp(1.7rem,3.6vw,2.3rem);letter-spacing:-.02em}h3{font-size:1.2rem;letter-spacing:-.01em}p{margin:0 0 1em}a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);transition:color .15s,border-color .15s}a:hover{color:var(--accent);border-bottom-color:var(--accent)}.label{font-size:.7rem;letter-spacing:.19em;text-transform:uppercase;color:var(--muted);font-variant-numeric:tabular-nums}.lede{font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.5;max-width:52ch;margin:0}.dim{color:var(--muted)}header{padding:13vh 0 8vh;border-bottom:1px solid var(--rule)}section>.label{display:block;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-.015em;text-transform:none;color:var(--fg);margin-bottom:.15em}.links{margin-top:2.2em;display:flex;flex-wrap:wrap;gap:1.6em}.links a{border:0;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.links a:hover{color:var(--accent)}#now{padding:7vh 0;border-bottom:1px solid var(--rule)}.now-grid{display:grid;gap:2.2em 3em;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));margin-top:2em}.now-item .k{display:block;margin-bottom:.35em}.now-item .v{font-size:1.3rem;line-height:1.35}.bar{display:flex;gap:4px;margin-top:.55em}.bar i{width:13px;height:13px;border:1px solid var(--accent);border-radius:50%;display:block;position:relative}.bar i.on{background:var(--accent)}.bar i[data-tip]{cursor:default}.bar i[data-tip]::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 7px);left:50%;transform:translate(-50%,3px);background:var(--fg);color:var(--bg);font-family:var(--serif);font-size:.72rem;line-height:1;letter-spacing:.01em;white-space:nowrap;padding:.45em .6em;border-radius:3px;opacity:0;pointer-events:none;transition:opacity .13s,transform .13s;z-index:2}.bar i[data-tip]:hover::after,.bar i[data-tip]:focus-visible::after{opacity:1;transform:translate(-50%,0)}.bar i[data-tip]:first-child::after{left:0;transform:translate(0,3px)}.bar i[data-tip]:first-child:hover::after{transform:translate(0,0)}.bar i[data-tip]:last-child::after{left:auto;right:0;transform:translate(0,3px)}.bar i[data-tip]:last-child:hover::after{transform:translate(0,0)}.book{display:block;margin-top:.5em;font-size:.98rem;line-height:1.35;color:var(--note)}.did{margin:.2em 0 0;padding:0;list-style:none;font-size:1.06rem;line-height:1.5}.did li{padding-left:1em;text-indent:-1em}.did li::before{content:"— ";color:var(--accent)}#work{padding:8vh 0 2vh}.proj{max-width:34rem;padding:5.5vh 0;border-bottom:1px solid var(--rule)}.proj:last-child{border-bottom:0}.phead{display:flex;align-items:baseline;gap:1em;margin-bottom:.45em}.phead h2 a{border-bottom:0}.phead h2 a:hover{color:var(--accent)}.psub{margin:.1em 0 1.4em;color:var(--muted);font-size:1.05rem;font-style:italic}.stack{margin-top:1.6em;font-size:.77rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.stack span::after{content:" · "}.stack span:last-child::after{content:""}#past{padding:8vh 0;border-top:1px solid var(--rule)}.xp{margin-top:2.4em}.xp-row{display:grid;grid-template-columns:8.5rem 1fr auto;gap:1.4em;padding:1em 0;border-bottom:1px solid var(--rule);align-items:baseline}.xp-row:first-child{border-top:1px solid var(--rule)}.xp-row .yr{font-size:.8rem;letter-spacing:.09em;color:var(--muted);font-variant-numeric:tabular-nums}.xp-row .role{color:var(--muted);font-size:.94rem;text-align:right}.org{font-size:1.08rem}footer{padding:7vh 0 9vh;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}.post{max-width:34rem;padding:9vh 0 4vh}.post h1{font-size:clamp(2.2rem,6vw,3.4rem)}.post h2{font-size:1.45rem;margin:2.2em 0 .6em}.post h3{margin:1.8em 0 .5em}.post .psub{font-size:1.15rem;margin:.5em 0 0}.post ul,.post ol{margin:0 0 1em;padding-left:1.3em}.post li{margin-bottom:.4em}.post blockquote{margin:1.6em 0;padding-left:1.2em;border-left:2px solid var(--accent);color:var(--note)}.post hr{border:0;border-top:1px solid var(--rule);margin:2.6em 0}.post code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--card);padding:.12em .35em;border-radius:2px}.post pre{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:1em;overflow-x:auto;font-size:.82rem;line-height:1.5}.post pre code{background:0;padding:0}.post table{width:100%;border-collapse:collapse;margin:1.5em 0;font-size:.92rem;display:block;overflow-x:auto}.post th,.post td{text-align:left;padding:.5em .8em;border-bottom:1px solid var(--rule)}.post th{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}.back{display:inline-block;margin-bottom:3em;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border:0}.back:hover{color:var(--accent)}@media (max-width:1000px){body{font-size:18px}.xp-row{grid-template-columns:6.5rem 1fr;gap:.4em 1em}.xp-row .role{text-align:left;grid-column:2}}@media (prefers-reduced-motion:reduce){*{transition:none!important}}</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Hey, I'm Ashrith.</h1>
+  <p class="lede">I'm an engineer at Google and I live in New York. I enjoy running, listening to podcasts, and playing music.</p>
+  <nav class="links">
+    <a href="https://github.com/ashrithanumala">GitHub</a>
+    <a href="https://linkedin.com/in/ashrithanumala">LinkedIn</a>
+    <a href="https://www.chess.com/member/ashrithanumala" title="Challenge me on Chess.com">Chess</a>
+    <a href="mailto:ashrithanumala04@gmail.com">Email</a>
+  </nav>
+</header>
+
+<section id="now">
+  <span class="label">This past week:</span>
+  <div class="now-grid">
+    <div class="now-item">
+      <span class="k label">Worked out</span>
+      <span class="v">6 <span class="dim">/ 7</span></span>
+      <div class="bar"><i class="on" data-tip="Mon — leg day + ran"></i><i class="on" data-tip="Tue — chest and back"></i><i data-tip="Wed — rest"></i><i class="on" data-tip="Thu — ran"></i><i class="on" data-tip="Fri — full body"></i><i class="on" data-tip="Sat — hiked"></i><i class="on" data-tip="Sun — shoulders and arms"></i></div>
+    </div>
+    <div class="now-item">
+      <span class="k label">Read</span>
+      <span class="v">1 <span class="dim">/ 7</span></span>
+      <div class="bar"><i data-tip="Mon — nothing"></i><i data-tip="Tue — nothing"></i><i data-tip="Wed — nothing"></i><i data-tip="Thu — nothing"></i><i class="on" data-tip="Fri — Thinking Strategically"></i><i data-tip="Sat — nothing"></i><i data-tip="Sun — TBD"></i></div>
+      <span class="book">Thinking Strategically</span>
+    </div>
+    <div class="now-item">
+      <span class="k label">Things I did</span>
+      <ul class="did"><li>saw kaaterskill waterfalls</li><li>hiked overlook mountain</li><li>went to a comedy show</li><li>cooked egg + chicken fried rice</li></ul>
+    </div>
+  </div>
+  <p class="dim" style="margin-top:2.2em;font-size:.86rem">From my daily notes, updated 2026-09-06.</p>
+</section>
+
+<section id="work">
+  <span class="label">Projects</span>
+
+  <article class="proj">
+    <div class="phead"><h2><a href="w/pocketlens.html">PocketLens</a></h2></div>
+<p>PocketLens links your bank and brokerage accounts, shows what you're worth, and tracks where the money went. There's a SwiftUI iOS app and a React web app; both read the same Postgres database directly, and a Python service keeps that database in step with the banks.</p>
+    <div class="stack"><span>Swift</span><span>React</span><span>Supabase</span><span>Plaid</span></div>
+  </article>
+
+  <article class="proj">
+    <div class="phead"><h2><a href="w/flightwatch.html">flightwatch</a></h2></div>
+<p>This is only really useful for people that live in NYC and have a lot of bilt points / Alaska points. It watches New York to Europe for two things at once: cash round trips under $325 all-in, and Alaska Mileage Plan award seats under 25,000 points (both limits discovered as good deals during EDA). The two legs don't have to match — a cash outbound with an award return counts, and all four combinations get searched.</p>
+<p>It runs on a Raspberry Pi on a systemd timer and pushes a message to my phone when something clears the thresholds. No paid APIs, no headless browser, no scraping service.</p>
+<p>I edit this to give different variations on the number of PTO days I want to take, overall cost limits, flexibility with more airports.</p>
+    <div class="stack"><span>Python Automation</span><span>Web Scraping</span></div>
+  </article>
+
+  <article class="proj">
+    <div class="phead"><h2><a href="w/weather-trading-system.html">Weather trading system</a></h2></div>
+<p>Kalshi lists markets on the daily high temperature at a single weather station. Austin's series is <code>KXHIGHAUS</code>: one event per day, and inside the event a row of contracts covering a strip of temperatures. <code>-B65.5</code> pays out if the high lands in the 64.5–66.5 band. <code>-T61</code> pays if the day never gets above 61, <code>-T68</code> if it clears 68. Exactly one of them wins.</p>
+<p>The bot builds its own forecast, converts it into a probability for each band, and buys the side where the market's price is far enough from that number to cover the fee.</p>
+    <div class="stack"><span>Python</span><span>Kalshi API</span><span>WebSockets</span><span>SciPy</span></div>
+  </article>
+
+  <article class="proj">
+    <div class="phead"><h2><a href="https://www.bloggingtheboys.com/post/oNcDXa77fZtu">Cowboys salary cap tool</a></h2></div>
+<p>Cut, trade, restructure, tag, tender, re-sign. Watch the cap move against you. Share the result so someone can tell you you're wrong.</p>
+<p>Dead money and restructure mechanics are fiddly enough that a tool getting them wrong is worse than no tool, so that's where the work went. Player data comes from Spotrac and Blogging the Boys, and stays editable so it survives going stale.</p>
+    <div class="stack"><span>Sports Analytics</span><span>React</span></div>
+  </article>
+
+  <article class="proj">
+    <div class="phead"><h2><a href="w/wordle-solver.html">Wordle solver</a></h2></div>
+<p>I'd been playing Wordle since 2022 and kept making mistakes I knew a computer wouldn't make — guessing words that couldn't be the answer, wasting a turn on a letter I'd already ruled out. After 3Blue1Brown's video on solving it with information theory, I wanted to try it myself, but in a direction I'd actually learn something from. So the goal became two things at once: minimize guesses, and use it as a real introduction to reinforcement learning.</p>
+    <div class="stack"><span>Python</span><span>C++</span><span>Reinforcement Learning.</span></div>
+  </article>
+
+  <article class="proj">
+    <div class="phead"><h2><a href="w/llm-distillation.html">LLM distillation feature store</a></h2></div>
+<p>Calling a frontier model for every inference is slow and expensive, and for a narrow task like intent classification it's mostly wasted — the task doesn't need that much model. The usual answer is distillation: have the big model label data, train a small model on the labels. The part that gets skipped is that this is a <em>pipeline</em>, not a one-shot script. New examples keep arriving, labels go stale, and re-labeling from scratch every time defeats the point.</p>
+<p>So I built the pipeline: a feature store that caches teacher outputs, keyed and freshness-tracked, so distillation can run continuously without paying for the same label twice.</p>
+    <div class="stack"><span>Go</span><span>Kafka</span><span>Redis</span><span>Distillation</span></div>
+  </article>
+
+  <article class="proj">
+    <div class="phead"><h2><a href="w/big-data-bowl.html">NFL Big Data Bowl</a></h2></div>
+<p>Tackling is half of football and almost nothing about it shows up in a box score. A tackle depends on reading the play, shedding a block, closing the gap, and staying upright on the turf, and the stat sheet records exactly one bit of that: whether the tackle happened. For the 2024 NFL Big Data Bowl, Akil Daresalamwala, Rudra Raval and I tried to recover the rest of it from tracking data — modeling good tackling directly from where players actually were, frame by frame, rather than from the outcome alone.</p>
+<p>A tackle is a two-stage process, so we built two metrics. <strong>SPEED</strong> (Strategic Pursuit Evaluation for Effective Defense) scores how well a defender closed on the ball carrier. <strong>WATT</strong> (Weighted Average Tackle Total) scores whether they finished once they got there. Plotting one against the other gives the <strong>VORTEX</strong> plot.</p>
+    <div class="stack"><span>Sports Analytics</span><span>Python</span><span>Pandas</span><span>SciPy</span></div>
+  </article>
+
+</section>
+
+<section id="past">
+  <span class="label">Experience</span>
+  <div class="xp">
+    <div class="xp-row"><span class="yr">2026</span><span class="org"><a href="https://www.google.com/">Google</a></span><span class="role">SWE-SRE</span></div>
+    <div class="xp-row"><span class="yr">2026</span><span class="org"><a href="https://ycharts.com/">YCharts</a></span><span class="role">Software Engineer</span></div>
+    <div class="xp-row"><span class="yr">2025</span><span class="org"><a href="https://www.siftree.com/">Siftree</a></span><span class="role">ML Intern</span></div>
+    <div class="xp-row"><span class="yr">2025</span><span class="org"><a href="https://ycharts.com/">YCharts</a></span><span class="role">Data Engineering Intern</span></div>
+    <div class="xp-row"><span class="yr">2024–25</span><span class="org"><a href="https://www.mlb.com/cubs/">Chicago Cubs</a></span><span class="role">Undergraduate Researcher</span></div>
+    <div class="xp-row"><span class="yr">2023–25</span><span class="org"><a href="https://www.foundersillinois.org/">Founders</a></span><span class="role">R&amp;D / Executive Board</span></div>
+    <div class="xp-row"><span class="yr">2024</span><span class="org"><a href="https://www.codehs.com/">CodeHS</a></span><span class="role">Software Engineering Intern</span></div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
