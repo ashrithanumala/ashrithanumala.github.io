@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="8" fill="#8A3B24"/>
+  <!-- Serif A drawn as paths, not text: a glyph would render differently
+       on every platform and Google fetches this file on its own. -->
+  <g fill="#FBF9F5">
+    <!-- Outer triangle with the counter punched out (evenodd). The counter's
+         flat bottom edge is what leaves the crossbar behind. -->
+    <path fill-rule="evenodd" d="M31 11 h3 L52 52 h-9 L33.5 22 L23 52 h-8 Z
+                                 M27.5 38 h11 l2.5 6 h-16 Z"/>
+    <!-- Slab serifs: wide feet, small apex flag. -->
+    <rect x="9" y="50" width="17" height="3.6" rx="1"/>
+    <rect x="38" y="50" width="18" height="3.6" rx="1"/>
+    <rect x="28" y="10" width="9" height="3.2" rx="1"/>
+  </g>
+</svg>
