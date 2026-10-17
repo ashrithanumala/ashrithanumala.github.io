@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>It&#x27;s a Metric, Too — Ashrith Anumala</title>
+<meta name="description" content="Solving Jane Street&#x27;s October 2026 puzzle by guessing well and letting a solver prove me wrong. Built with JavaScript, Python, OR-Tools CP-SAT.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://ashrithanumala.github.io/w/its-a-metric-too.html">
+<meta name="author" content="Ashrith Anumala">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ashrith Anumala">
+<meta property="og:url" content="https://ashrithanumala.github.io/w/its-a-metric-too.html">
+<meta property="og:title" content="It&#x27;s a Metric, Too — Ashrith Anumala">
+<meta property="og:description" content="Solving Jane Street&#x27;s October 2026 puzzle by guessing well and letting a solver prove me wrong. Built with JavaScript, Python, OR-Tools CP-SAT.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="It&#x27;s a Metric, Too — Ashrith Anumala">
+<meta name="twitter:description" content="Solving Jane Street&#x27;s October 2026 puzzle by guessing well and letting a solver prove me wrong. Built with JavaScript, Python, OR-Tools CP-SAT.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://ashrithanumala.github.io/#me","name":"Ashrith Anumala","url":"https://ashrithanumala.github.io/","jobTitle":"Software Engineer","worksFor":{"@type":"Organization","name":"Google"},"address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","addressCountry":"US"},"sameAs":["https://github.com/ashrithanumala","https://linkedin.com/in/ashrithanumala","https://www.chess.com/member/ashrithanumala"]},{"@type":"TechArticle","@id":"https://ashrithanumala.github.io/w/its-a-metric-too.html#article","headline":"It's a Metric, Too","name":"It's a Metric, Too","url":"https://ashrithanumala.github.io/w/its-a-metric-too.html","mainEntityOfPage":"https://ashrithanumala.github.io/w/its-a-metric-too.html","author":{"@id":"https://ashrithanumala.github.io/#me"},"publisher":{"@id":"https://ashrithanumala.github.io/#me"},"isPartOf":{"@id":"https://ashrithanumala.github.io/#site"},"description":"Solving Jane Street's October 2026 puzzle by guessing well and letting a solver prove me wrong.","keywords":["JavaScript","Python","OR-Tools CP-SAT"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ashrithanumala.github.io/"},{"@type":"ListItem","position":2,"name":"It's a Metric, Too","item":"https://ashrithanumala.github.io/w/its-a-metric-too.html"}]}]}</script>
+<style>:root{--bg:#FBF9F5; --fg:#1B1A17; --muted:#6E695E; --rule:#E2DCCF;--accent:#8A3B24; --note:#5C574C; --card:#F4F0E8;--serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141310; --fg:#E9E4D9; --muted:#9A9384; --rule:#2E2B24;--accent:#D08A63; --note:#A9A294; --card:#1C1A16;}}:root[data-theme="dark"]{--bg:#141310; --fg:#E9E4D9; --muted:#9A9384; --rule:#2E2B24;--accent:#D08A63; --note:#A9A294; --card:#1C1A16;}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:19px;line-height:1.6;font-kerning:normal;text-rendering:optimizeLegibility;}.wrap{max-width:1180px;margin:0 auto;padding:0 6vw}h1,h2,h3{font-weight:400;line-height:1.14;margin:0}h1{font-size:clamp(2.6rem,7.5vw,4.6rem);letter-spacing:-.025em;margin:0 0 .12em}h2{font-size:clamp(1.7rem,3.6vw,2.3rem);letter-spacing:-.02em}h3{font-size:1.2rem;letter-spacing:-.01em}p{margin:0 0 1em}a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);transition:color .15s,border-color .15s}a:hover{color:var(--accent);border-bottom-color:var(--accent)}.label{font-size:.7rem;letter-spacing:.19em;text-transform:uppercase;color:var(--muted);font-variant-numeric:tabular-nums}.lede{font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.5;max-width:52ch;margin:0}.dim{color:var(--muted)}header{padding:13vh 0 8vh;border-bottom:1px solid var(--rule)}section>.label{display:block;font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-.015em;text-transform:none;color:var(--fg);margin-bottom:.15em}.links{margin-top:2.2em;display:flex;flex-wrap:wrap;gap:1.6em}.links a{border:0;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.links a:hover{color:var(--accent)}#now{padding:7vh 0;border-bottom:1px solid var(--rule)}.now-grid{display:grid;gap:2.2em 3em;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));margin-top:2em}.now-item .k{display:block;margin-bottom:.35em}.now-item .v{font-size:1.3rem;line-height:1.35}.bar{display:flex;gap:4px;margin-top:.55em}.bar i{width:13px;height:13px;border:1px solid var(--accent);border-radius:50%;display:block;position:relative}.bar i.on{background:var(--accent)}.bar i[data-tip]{cursor:default}.bar i[data-tip]::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 7px);left:50%;transform:translate(-50%,3px);background:var(--fg);color:var(--bg);font-family:var(--serif);font-size:.72rem;line-height:1;letter-spacing:.01em;white-space:nowrap;padding:.45em .6em;border-radius:3px;opacity:0;pointer-events:none;transition:opacity .13s,transform .13s;z-index:2}.bar i[data-tip]:hover::after,.bar i[data-tip]:focus-visible::after{opacity:1;transform:translate(-50%,0)}.bar i[data-tip]:first-child::after{left:0;transform:translate(0,3px)}.bar i[data-tip]:first-child:hover::after{transform:translate(0,0)}.bar i[data-tip]:last-child::after{left:auto;right:0;transform:translate(0,3px)}.bar i[data-tip]:last-child:hover::after{transform:translate(0,0)}.book{display:block;margin-top:.5em;font-size:.98rem;line-height:1.35;color:var(--note)}.did{margin:.2em 0 0;padding:0;list-style:none;font-size:1.06rem;line-height:1.5}.did li{padding-left:1em;text-indent:-1em}.did li::before{content:"— ";color:var(--accent)}#work{padding:8vh 0 2vh}.proj{max-width:34rem;padding:5.5vh 0;border-bottom:1px solid var(--rule)}.proj:last-child{border-bottom:0}.proj img{display:block;max-width:100%;height:auto;margin:1.2em 0}.phead{display:flex;align-items:baseline;gap:1em;margin-bottom:.45em}.phead h2 a{border-bottom:0}.phead h2 a:hover{color:var(--accent)}.psub{margin:.1em 0 1.4em;color:var(--muted);font-size:1.05rem;font-style:italic}.stack{margin-top:1.6em;font-size:.77rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.stack span::after{content:" · "}.stack span:last-child::after{content:""}#past{padding:8vh 0;border-top:1px solid var(--rule)}.xp{margin-top:2.4em}.xp-row{display:grid;grid-template-columns:8.5rem 1fr auto;gap:1.4em;padding:1em 0;border-bottom:1px solid var(--rule);align-items:baseline}.xp-row:first-child{border-top:1px solid var(--rule)}.xp-row .yr{font-size:.8rem;letter-spacing:.09em;color:var(--muted);font-variant-numeric:tabular-nums}.xp-row .role{color:var(--muted);font-size:.94rem;text-align:right}.org{font-size:1.08rem}footer{padding:7vh 0 9vh;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}.post{max-width:34rem;padding:9vh 0 4vh}.post h1{font-size:clamp(2.2rem,6vw,3.4rem)}.post h2{font-size:1.45rem;margin:2.2em 0 .6em}.post h3{margin:1.8em 0 .5em}.post .psub{font-size:1.15rem;margin:.5em 0 0}.post ul,.post ol{margin:0 0 1em;padding-left:1.3em}.post li{margin-bottom:.4em}.post blockquote{margin:1.6em 0;padding-left:1.2em;border-left:2px solid var(--accent);color:var(--note)}.post hr{border:0;border-top:1px solid var(--rule);margin:2.6em 0}.post code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--card);padding:.12em .35em;border-radius:2px}.post pre{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:1em;overflow-x:auto;font-size:.82rem;line-height:1.5}.post pre code{background:0;padding:0}.post img{display:block;max-width:100%;height:auto;margin:1.6em 0}.post img[src$="-phone.png"]{max-width:min(100%,17rem);margin:2em auto}.post table{width:100%;border-collapse:collapse;margin:1.5em 0;font-size:.92rem;display:block;overflow-x:auto}.post th,.post td{text-align:left;padding:.5em .8em;border-bottom:1px solid var(--rule)}.post th{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}.back{display:inline-block;margin-bottom:3em;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border:0}.back:hover{color:var(--accent)}@media (max-width:1000px){body{font-size:18px}.xp-row{grid-template-columns:6.5rem 1fr;gap:.4em 1em}.xp-row .role{text-align:left;grid-column:2}}@media (prefers-reduced-motion:reduce){*{transition:none!important}}</style>
+</head>
+<body>
+<div class="wrap">
+  <article class="post">
+    <a class="back" href="../index.html">← Home</a>
+    <h1>It&#x27;s a Metric, Too</h1>
+    <p class="psub">Solving Jane Street&#x27;s October 2026 puzzle by guessing well and letting a solver prove me wrong.</p>
+<p>Jane Street's October 2026 puzzle is a partially filled 11×11 grid of numbers and asks you to carve it into "states." Every state has to be connected and symmetric, some states have a capitol, and every cells number is the cheapest cost of travelling from that cell to the nearest capitol.</p>
+<p>I spent about 10 hours over 3 days. The first day went to trying to brute force it, which didn't work. The other two went to making educated guesses about pieces of the board and building tools to tell me quickly whether each guess was wrong, eventually getting to the answer. Claude code did the heavy lifting on the programming side.</p>
+<p><img src="https://www.janestreet.com/puzzles/metric-too.png" alt="The puzzle grid, from Jane Street" loading="lazy" decoding="async"></p>
+<h2>The rules</h2>
+<ul><li>A <strong>state</strong> is a connected group of cells that maps onto itself under some rotation or reflection.</li><li>A state's <strong>capitol</strong> is the one cell that every one of its symmetries leaves in place. A 1×3 strip has no capitol, because its mirror fixes the whole middle column of the plane, which isn't a single cell.</li><li>Moving between neighbouring cells <strong>costs the size of the state you're in</strong>. Crossing a border costs the smaller of the two states' sizes.</li><li>Each number is the <strong>cheapest total cost</strong> from that cell to any capitol.</li><li>The answer: label every cell with its state's size, sum each row, then sum the squares of those row sums.</li></ul>
+<p>Written out, with <code>S(u)</code> the size of the state containing cell <code>u</code>:</p>
+<pre><code>cost(u, v) = min(S(u), S(v))                    for neighbouring cells u, v
+d(u)       = cheapest path cost from u to any capitol
+answer     = Σ_rows ( Σ_cols S(r, c) )²</code></pre>
+<h2>Theory</h2>
+<p>The main thing that guided the search were maximum and minimum bounds on the sizes of states that cells could be in. They all use the fact that <code>d</code> is a shortest-path distance.</p>
+<h3>Capitols</h3>
+<ul><li><strong>d = 0 if and only if the cell is a capitol.</strong> Every step costs at least 1, so the only way to have distance 0 is to already be there.</li><li><strong>A state with a capitol has odd size.</strong> The capitol is the only fixed cell, so every other cell is paired off with a different cell by each symmetry. The cells come in orbits of 2 or 4, plus the one capitol:</li></ul>
+<pre><code>  S = 1 + (sum of orbit sizes, each 2 or 4)  →  S is odd</code></pre>
+<ul><li><strong>Only five symmetries can have a capitol:</strong> vertical mirror, horizontal mirror, the two diagonal mirrors, and a 180° turn, each through the capitol. A mirror whose axis runs through 3 or more of the state's cells fixes all of them, so that state has no capitol. That's why the 1×3 strip doesn't get one.</li><li><strong>The grid edge matters.</strong> r11c6 is a 0 on the bottom edge. A 180° turn or a horizontal mirror through it would send cells off the board. So its state is either a 1×1 or uses the vertical mirror or one of the diagonals.</li></ul>
+<h3>Neighbouring cells</h3>
+<p>For neighbours <code>u</code> and <code>v</code>, <code>d</code> can't change by more than the one step between them:</p>
+<pre><code>|d(u) − d(v)| ≤ min(S(u), S(v))</code></pre>
+<p>So <strong>both</strong> cells have size at least the gap. This one rule is responsible for most of the early deductions:</p>
+<ul><li><code>r11c9 = 77</code> and <code>r11c10 = 61</code> are neighbours, a gap of 16, so both sit in states of size ≥ 16.</li><li><code>r8c11 = 13</code> sits next to <code>r7c11</code>, which has <code>d ≤ 1</code>, a gap of at least 12, so both are ≥ 12. That's the first sign of the 12-cell state on the right edge.</li></ul>
+<p><strong>A 1 needs a 1×1 next to it.</strong> <code>d(u) = 1</code> means the last step cost 1, which needs <code>min(S(u), S(v)) = 1</code>. So <code>v</code> is a 1×1 state, and a 1×1 state is its own capitol. Its neighbours, in turn, must all have <code>d ≤ 1</code>, so a 1×1 capitol can never touch a 2 or higher.</p>
+<p>That pinned <strong>r6c11</strong> as a 1×1 capitol. <code>r5c11 = 1</code> has three candidate neighbours. <code>r5c10</code> touches a 4 and <code>r4c11</code> touches a 14, and neither 4 nor 14 can sit next to a 1×1 capitol.</p>
+<h3>Two and three steps apart</h3>
+<p>The same idea over longer paths. If <code>A − W − B</code> is a two-step path:</p>
+<pre><code>|d(A) − d(B)| ≤ cost(A,W) + cost(W,B) ≤ 2·S(W)
+
+  ⇒  S(W) ≥ ⌈Δ / 2⌉            (the middle cell)
+     S(A) + S(B) ≥ Δ           (the two ends)</code></pre>
+<p>where <code>Δ = |d(A) − d(B)|</code>. Over three steps <code>A − W1 − W2 − B</code>, the two middle cells share the load:</p>
+<pre><code>S(W1) + S(W2) ≥ ⌈2Δ / 3⌉</code></pre>
+<p>These produced the numbers that told me where the giant states had to be:</p>
+<ul><li><code>r4c4 = 51</code> and <code>r3c3 = 7</code> are two steps apart, <code>Δ = 44</code>, so the cells between them (<code>r3c4</code>, <code>r4c3</code>) are in states of size <strong>≥ 22</strong>.</li><li><code>r11c9 = 77</code> and <code>r11c6 = 0</code> are three steps apart along the bottom row, <code>Δ = 77</code>:</li></ul>
+<pre><code>  S(r11c7) + S(r11c8) ≥ ⌈2·77 / 3⌉ = 52</code></pre>
+<p>so at least one of them is in a state of size ≥ 26. In the final board both are 37.</p>
+<ul><li><code>r9c9 = 45</code> and <code>r8c8 = 10</code> are two steps apart diagonally, <code>Δ = 35</code>, so <code>r8c9</code> and <code>r9c8</code> are both <strong>≥ 18</strong>.</li></ul>
+<h3>Distance to the nearest capitol</h3>
+<p><strong>A clue d needs a capitol within ⌈d/2⌉ steps.</strong> Walking out from a capitol, only the first step can cost 1: a step costs 1 only when it touches a 1×1 state, and any 1×1 state is itself a capitol. Every later step costs at least 2. So reaching a cell <code>k</code> steps away costs at least:</p>
+<pre><code>d ≥ 1 + 2(k − 1) = 2k − 1    ⇒    k ≤ (d + 1) / 2</code></pre>
+<p>Applied to every clue, 9 of them couldn't reach the capitols I already knew about. That meant at least 3–4 more capitols, each confined to a small zone.</p>
+<p><strong>Inside a state, a small clue needs a way out.</strong> If every neighbour of <code>u</code> is in its own state, then every step out costs <code>S(u)</code>, so <code>d(u) ≥ S(u)</code>. Turned around:</p>
+<pre><code>0 &lt; d(u) &lt; S(u)   ⇒   u must touch a smaller state</code></pre>
+<p>An empty cell walled in on all sides has the same problem in reverse: it has to become a state of its own, and a 1×1 state is a capitol.</p>
+<p><strong>Every non-capitol has a cheaper neighbour it got its distance from.</strong> It's what the final checker tests:</p>
+<pre><code>d(u) = min over neighbours v of ( d(v) + min(S(u), S(v)) )</code></pre>
+<h3>Area</h3>
+<p>Every cell belongs to exactly one state, so the distinct state sizes add up to the board:</p>
+<pre><code>Σ over states S = 121</code></pre>
+<p>Two cells that each need a huge state can't be in two separate huge states if the free area doesn't have room for both. This turned out to be the key fact (below).</p>
+<h2>From inequalities to a solver</h2>
+<p>The solver keeps a range <code>[minS, maxS]</code> for every cell's state size and tightens it with two shortest-path runs:</p>
+<ul><li><strong>Too far.</strong> Run shortest paths using the <em>cheapest possible</em> cost for each edge (<code>min</code> of the two <code>minS</code> values), starting from every cell that could still be a capitol. If a clue's lower bound comes out larger than the clue, the board is dead.</li><li><strong>Too close.</strong> Run it again with the <em>most expensive possible</em> costs (from <code>maxS</code>). If even that gets to a clue for less than the clue, the board is dead.</li><li><strong>Shaving.</strong> To test whether a cell can have size <code>≤ K</code>, set its <code>maxS</code> to <code>K</code>, rerun "too close", and check for a contradiction. Binary search on <code>K</code> gives the tightest <code>minS</code>.</li></ul>
+<p>Shaving is how the 51 at r4c4 was pushed from "≥ 22" to "in a state of at least <strong>37</strong> cells" once a few states were placed around it.</p>
+<h2>Brute force doesn't work</h2>
+<p>My first solver was a depth-first search in JavaScript:</p>
+<ul><li>pick the most constrained cell;</li><li>pick a symmetry;</li><li>grow a symmetric shape from it;</li><li>run the bounds above;</li><li>back out on contradiction.</li></ul>
+<p>Shapes grow one orbit at a time. To make that easy, double the coordinates, so cell centres sit on even numbers and grid lines on odd ones. Every mirror axis and rotation centre then becomes a simple map:</p>
+<pre><code>vertical mirror      (r, c) → (r, p − c)
+horizontal mirror    (r, c) → (p − r, c)
+main diagonal        (r, c) → (c + k, r − k)
+anti-diagonal        (r, c) → (p − c, p − r)
+180° turn            (r, c) → (p − r, q − c)</code></pre>
+<p>On an 11×11 board that's 525 symmetries in total. Each map, applied twice, has to give back the starting cell; that was a useful unit test.</p>
+<p>It solved the 5×5 example instantly (8045, matching the official answer). On the real board the first cell alone had over 10⁷ branches, and it ran out of memory in under five minutes.</p>
+<p>Next I wrote a CP-SAT model in OR-Tools:</p>
+<ul><li>variables for which state each cell belongs to;</li><li>a level-and-parent scheme for connectivity;</li><li>a symmetry choice per state;</li><li><code>d(u) ≤ d(v) + cost(u, v)</code> for every edge, as the shortest-path constraints.</li></ul>
+<p>It was correct: on randomly generated puzzles with planted answers it never missed the answer and never returned a wrong board. On the real board it ran 10 minutes and never found a single candidate.</p>
+<p>The problem was the same both times. A clue like 77 forces a giant symmetric state, and neither method can build a 37-cell symmetric shape by chance. Something had to place the big pieces first.</p>
+<h2>Educated Guessing</h2>
+<p>So I switched methods: I guess a piece of the board manually from looking at it, then the computer tries as hard as it can to prove the guess wrong.</p>
+<p>The tools I ended up with:</p>
+<ul><li><strong><code>region.py</code></strong>: a CP-SAT model on a small window of the board instead of the whole thing. States can run off the window's edge. It answers questions like "if these states are right, can rows 1–6 be filled at all?" in about a second.</li><li><strong><code>enum51.py</code></strong>: lists every symmetric state of a given size range that contains a set of cells. It grows a shape one symmetric orbit at a time, then filters every candidate through the bounds checker.</li><li><strong><code>piece.js</code></strong>: places a set of fixed states and runs the full DFS with every shortcut turned off. If it finishes, that's a proof.</li></ul>
+<p>The loop: fix a few states I believe in, enumerate what has to go next to them, kill whatever breaks a clue, repeat. When everything dies, one of my guesses was wrong. Back out the least certain one.</p>
+<h2>Things I got wrong</h2>
+<p><strong>The left side.</strong> My first anchors:</p>
+<ul><li>a 4-cell strip across row 1;</li><li>a 7-cell state with its capitol at r2c3;</li><li>an 11-cell state with its capitol at r7c2. I was fairly confident about this one, and its shape looked right.</li></ul>
+<p>The region solver found 9 ways to fill columns 1–5 around those pieces. Every one died once I tried to extend its half-finished states into the right half of the board. I didn't know yet which piece was wrong.</p>
+<p><strong>Top right.</strong> The 1s at r3c6 and r4c7 each need a 1×1 neighbour. Both touch r3c7 and r4c6; the alternatives each failed. r4c6 doesn't work as the 1×1: then <code>r4c5</code> has <code>d ≤ 1</code> right next to the 51, forcing a gap of 50 across one edge, so both cells would need states of size ≥ 50. So <strong>r3c7</strong> is the 1×1 capitol.</p>
+<p>There was also an 11-clue at r2c8, sitting next to cells with <code>d ≤ 1</code>, so its state is at least 10 cells. Of 579 symmetric 10-cell shapes there, one survived every check: a ring around r3c7. I also drew the rest of the right side by eye:</p>
+<ul><li>a 5-cell strip across the top;</li><li>a 7-cell state with its capitol at r2c10;</li><li>a vertical domino;</li><li>a 12-cell state running down columns 10–11.</li></ul>
+<p>All of it filled in consistently.</p>
+<p><strong>The giant state.</strong> By shaving, r4c4 sits in a state of at least 37 cells. I swept 224 combinations of my 11-cell state's shape and the 10-state. In none of them was there room left for that state, and the search was exhaustive. So the 11-cell state was the broken piece. Its capitol was right; its shape wasn't.</p>
+<h2>Breakthroughs</h2>
+<p>Two key observations.</p>
+<p><strong>Area.</strong> r4c4 needs a state of at least 37 cells. Next to the 45, r8c9 needs one of at least 36. After the pieces already placed, only about 64–71 cells are free:</p>
+<pre><code>37 + 36 = 73 &gt; 71</code></pre>
+<p>Two separate giants don't fit, so they're the <strong>same state</strong>, wrapping from the top-left pocket to the bottom-right.</p>
+<p><strong>Its capitol.</strong> The 10 at r6c6 looked like two steps of cost 5 to the right, through r6c7 to the capitol at r6c8:</p>
+<pre><code>d(r6c6) = min(37, 5) + min(5, 5) = 5 + 5 = 10</code></pre>
+<p>So r6c7 sits in a state of size ≥ 5. I guessed the giant was exactly 37 cells (odd, as a capitol state must be) with its capitol at r7c6.</p>
+<p>With that pinned, the search shrank a lot:</p>
+<ul><li>shapes of exactly 37 cells, 180° symmetric about r7c6, containing r3c4, r4c4 and r8c9: <strong>45,757</strong>;</li><li>shapes passing the bounds check: <strong>15</strong>;</li><li>the full exhaustive search run on each of the 15: <strong>14 died</strong>, and one completed into exactly one board.</li></ul>
+<p>An independent checker that shares no code with the solver confirmed it: every state connected and symmetric, every capitol valid, every clue equal to the true shortest cost.</p>
+<p><img src="../assets/its-a-metric-too-solved.png" alt="The solved board: each color is one state, dots mark the capitols" loading="lazy" decoding="async"></p>
+<pre><code>sizes (* = capitol)
+ 4  4  4  4  7 10  5  5  5  5  5
+ 7  7 *7  7  7 10 10 10  7 *7  7
+ 7 37 37 37 37 10 *1 10  7 12  7
+11 37 37 37 37 10 10 10  7 12  7
+11 11 37 37 37 37  5 10  2 12 12
+11 37 37 37 37 37  5 *5  2 12 *1
+11*11 11  2 37*37 37  5  5 12 12
+10 10 11  2  4 37 37 37 37 37 12
+10 11 11  4  4 37 37 37 37 12 12
+10 10 11 10  4  3 37 37 37 37 12
+10 10 10 10  3 *3 37 37 37 37 12</code></pre>
+<p>You can check the big clues by hand against the cheapest paths:</p>
+<pre><code>r4c4  = 51:  37 (into r3c4) + 7 + 7                 → capitol r2c3
+r11c9 = 77:  37 + 37 + min(37, 3) = 37 + 37 + 3     → capitol r11c6
+r11c10 = 61: 12 + 12 + 12 + 12 + 12 + 1             → capitol r6c11
+r9c9  = 45:  12 + 12 + 12 + 5 + 2 + 2               → capitol r6c8</code></pre>
+<p>The 77 is exactly the three-step bound from earlier: <code>S(r11c7) + S(r11c8) = 74 ≥ 52</code>.</p>
+<p>Row sums: 58, 86, 202, 215, 211, 221, 180, 234, 212, 208, 206. The sum of their squares is <strong>408951</strong>.</p>
+<h2>What held up</h2>
+<p>Most of my manual guesses were right:</p>
+<ul><li>the top-left strip and the 7-state;</li><li>the 1×1 at r3c7 and the ring around it;</li><li>the whole right side;</li><li>the 37-cell giant with its capitol at r7c6;</li><li>the capitol at r7c2.</li></ul>
+<p>The 11-state I'd been sure of runs down the left edge instead, and the 5-state at r6c8 is a Z shape, not the domino I first pictured.</p>
+<h2>Takeaways</h2>
+<ul><li><strong>Every useful constraint came from <code>|d(u) − d(v)| ≤ path cost</code></strong></li><li><strong>Search can't invent big structure, but it's very good at killing it.</strong> Every successful step was a human guess followed by an exhaustive check. Pure search never placed a single big state.</li><li><strong>Narrow the search window before running anything.</strong> Every slow run I had was one with no anchors. Pinning one capitol cut the search from "won't finish" to 15 candidates.</li></ul>
+  </article>
+</div>
+</body>
+</html>
